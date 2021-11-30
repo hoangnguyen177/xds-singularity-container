@@ -1,0 +1,20 @@
+BootStrap: docker
+From: ubuntu:21.04
+
+%post
+    apt-get -y update
+    apt-get install -y wget bzip2 bc binutils python2.7 libgomp1
+    ln -s /usr/bin/python2.7 /usr/bin/python
+    DEBIAN_FRONTEND="noninteractive" apt-get install -y tzdata
+    dpkg-reconfigure --frontend noninteractive tzdata
+    apt-get install -y libqt5gui5 libqt5printsupport5 libqt5opengl5 xxdiff
+    wget -O /usr/local/bin/XDS-INTEL64_Linux_x86_64.tar.gz https://strucbio.biologie.uni-konstanz.de/pub/xds/2021-Feb05/XDS-INTEL64_Linux_x86_64.tar.gz
+    tar -xvf /usr/local/bin/XDS-INTEL64_Linux_x86_64.tar.gz -C /usr/local/bin/
+    ln -sf /usr/local/bin/XDS-INTEL64_Linux_x86_64/* /usr/local/bin/
+    rm /usr/local/bin/XDS-INTEL64_Linux_x86_64.tar.gz
+    wget -N https://strucbio.biologie.uni-konstanz.de/pub/linux_bin/get_folder.sh -O /usr/local/bin/get_folder.sh
+    chmod +x /usr/local/bin/get_folder.sh
+    cd /usr/local/bin/ && ./get_folder.sh
+    
+
+
