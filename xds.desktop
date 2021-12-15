@@ -1,0 +1,11 @@
+[Desktop Entry]
+Comment=
+Exec=/scratch/cvl-admin/bin/xds.sh
+# You will need to update this to the right icon name/type
+Icon=
+Name=Xds
+StartupNotify=true
+Type=Application
+Categories=Crystallography
+X-KDE-SubstituteUID=false
+X-KDE-Username=
