@@ -38,7 +38,8 @@ From: ubuntu:21.04
     ln -sf /usr/local/bin/xdsmesrc/bin/noarch/* /usr/local/bin/
     ln -s /usr/bin/python2.7 /usr/bin/python2
 
-
+    # strip
+    strip --remove-section=.note.ABI-tag /lib/x86_64-linux-gnu/libQt5Core.so.5.15.2
 
 
 
